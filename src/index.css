@@ -1,0 +1,125 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-primary-bg: #020B16;
+    --color-panel-bg: #031525;
+    --color-secondary-bg: #06243A;
+    --color-deep-bg: #010811;
+    --color-accent-cyan: #00E5FF;
+    --color-secondary-cyan: #00B8D4;
+    --color-glow: rgba(0, 229, 255, 0.14);
+    --color-card-bg: rgba(3, 21, 37, 0.80);
+    --color-card-border: rgba(0, 229, 255, 0.22);
+    --color-text-main: #FFFFFF;
+    --color-text-muted: #A9C4D8;
+  }
+  
+  html {
+    font-family: 'Inter', sans-serif;
+    background-color: #020B16;
+    color: #FFFFFF;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: #020B16;
+    color: #FFFFFF;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, .font-heading {
+    font-family: 'Space Grotesk', sans-serif;
+  }
+
+  code, pre, .font-mono {
+    font-family: 'IBM Plex Mono', monospace;
+  }
+}
+
+/* Subtle Scientific Dark Laboratory Grid Pattern */
+.bg-grid-pattern {
+  background-size: 48px 48px;
+  background-image: 
+    linear-gradient(to right, rgba(0, 229, 255, 0.035) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 229, 255, 0.035) 1px, transparent 1px);
+}
+
+.bg-dot-pattern {
+  background-image: radial-gradient(rgba(0, 229, 255, 0.12) 1.2px, transparent 1.2px);
+  background-size: 28px 28px;
+}
+
+/* DNA-Inspired Connection Mesh Pattern */
+.bg-dna-mesh {
+  background-image: 
+    radial-gradient(circle at 50% 50%, rgba(0, 229, 255, 0.04) 0%, transparent 60%),
+    linear-gradient(60deg, rgba(0, 229, 255, 0.02) 1px, transparent 1px),
+    linear-gradient(-60deg, rgba(0, 229, 255, 0.02) 1px, transparent 1px);
+  background-size: 100% 100%, 36px 36px, 36px 36px;
+}
+
+/* High-End Dark Laboratory Glassmorphism */
+.glass-panel {
+  background: rgba(3, 21, 37, 0.82);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(0, 229, 255, 0.22);
+}
+
+/* Luxury Science Card */
+.science-card {
+  background: rgba(3, 21, 37, 0.80);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(0, 229, 255, 0.20);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.science-card:hover {
+  border-color: rgba(0, 229, 255, 0.45);
+  box-shadow: 0 10px 30px -8px rgba(0, 229, 255, 0.15);
+  transform: translateY(-3px);
+}
+
+/* Atmospheric Ambient Lighting Orbs */
+.atmospheric-glow-top {
+  position: absolute;
+  top: -10%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 800px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(0, 229, 255, 0.06) 0%, rgba(6, 36, 58, 0.03) 50%, transparent 80%);
+  pointer-events: none;
+  filter: blur(60px);
+}
+
+.atmospheric-glow-side {
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(0, 184, 212, 0.05) 0%, rgba(3, 21, 37, 0.02) 60%, transparent 80%);
+  pointer-events: none;
+  filter: blur(80px);
+}
+
+/* Custom Scientific Dark Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #020B16;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 229, 255, 0.25);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 229, 255, 0.5);
+}

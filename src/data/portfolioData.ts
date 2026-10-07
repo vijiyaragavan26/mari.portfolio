@@ -480,8 +480,8 @@ export const CERTIFICATES: CertificateItem[] = [
     documentType: "Fellowship Certificate",
     badgeColor: "bg-sky-100 text-sky-800 border-sky-300",
     iconName: "Award",
-    imageUrl: "/assets/certificates/iitm-internship.jpg",
-    pdfUrl: "/assets/certificates/iitm-internship.pdf"
+    imageUrl: "/assets/certificates/IMG-20261007-WA0005.jpg",
+    pdfUrl: "/assets/certificates/Mariyappan_V_IIT_Madras_Certificate.pdf"
   },
   {
     id: "cert-adv-lab-2026",

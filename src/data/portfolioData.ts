@@ -495,7 +495,7 @@ export const CERTIFICATES: CertificateItem[] = [
   documentType: "Membership Certificate",
   badgeColor: "bg-indigo-100 text-indigo-800 border-indigo-300",
   iconName: "Award",
-  imageUrl: "/assets/certificates/BIDDS_Life_Member_Certificate.jpg"
+  imageUrl: "/assets/certificates/IMG-20261007-WA0018.jpg"
   },
   {
     id: "cert-adv-lab-2026",

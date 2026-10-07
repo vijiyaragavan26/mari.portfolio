@@ -484,6 +484,20 @@ export const CERTIFICATES: CertificateItem[] = [
     pdfUrl: "/assets/certificates/Mariyappan_V_IIT_Madras_Certificate.pdf"
   },
   {
+  id: "cert-bidds-life-member",
+  title: "Life Member – Bioinformatics and Drug Discovery Society",
+  institution: "Bioinformatics and Drug Discovery Society (BIDDS)",
+  category: ["LEADERSHIP"],
+  year: "2026",
+  dateStr: "2026",
+  description: "Life Membership certificate issued by the Bioinformatics and Drug Discovery Society (BIDDS), Department of Bioinformatics, Alagappa University.",
+  verificationBadge: "BIDDS Life Member",
+  documentType: "Membership Certificate",
+  badgeColor: "bg-indigo-100 text-indigo-800 border-indigo-300",
+  iconName: "Award",
+  imageUrl: "/assets/certificates/BIDDS_Life_Member_Certificate.jpg"
+  },
+  {
     id: "cert-adv-lab-2026",
     title: "3rd International Symposium on Advances in Laboratory Techniques",
     institution: "Alagappa University",

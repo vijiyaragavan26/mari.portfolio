@@ -176,7 +176,7 @@ export const ResearchExperience: React.FC<ResearchExperienceProps> = ({ onOpenCe
                     className="relative rounded-xl overflow-hidden border border-[#00E5FF]/30 bg-[#02101F] mb-3 cursor-pointer group/cert aspect-[16/11]"
                   >
                     <img 
-                      src="/assets/certificates/iitm-internship.jpg" 
+                      src="/assets/certificates/IMG-20261007-WA0005.jpg" 
                       alt="IIT Madras Summer Fellowship Certificate of Participation" 
                       className="w-full h-full object-cover object-top transition-transform duration-300 group-hover/cert:scale-105"
                     />

@@ -484,18 +484,18 @@ export const CERTIFICATES: CertificateItem[] = [
     pdfUrl: "/assets/certificates/Mariyappan_V_IIT_Madras_Certificate.pdf"
   },
   {
-  id: "cert-bidds-life-member",
-  title: "Life Member – Bioinformatics and Drug Discovery Society",
-  institution: "Bioinformatics and Drug Discovery Society (BIDDS)",
-  category: ["LEADERSHIP"],
-  year: "2026",
-  dateStr: "2026",
-  description: "Life Membership certificate issued by the Bioinformatics and Drug Discovery Society (BIDDS), Department of Bioinformatics, Alagappa University.",
-  verificationBadge: "BIDDS Life Member",
-  documentType: "Membership Certificate",
-  badgeColor: "bg-indigo-100 text-indigo-800 border-indigo-300",
-  iconName: "Award",
-  imageUrl: "/assets/certificates/IMG-20261007-WA0018.jpg"
+    id: "cert-bidds-life-member",
+    title: "Life Member – Bioinformatics and Drug Discovery Society",
+    institution: "Bioinformatics and Drug Discovery Society (BIDDS)",
+    category: ["LEADERSHIP", "BIOMEDICAL"],
+    year: "2026",
+    dateStr: "2026",
+    description: "Life Membership certificate issued by the Bioinformatics and Drug Discovery Society (BIDDS), Department of Bioinformatics, Alagappa University.",
+    verificationBadge: "BIDDS Life Member",
+    documentType: "Membership Certificate",
+    badgeColor: "bg-indigo-100 text-indigo-800 border-indigo-300",
+    iconName: "Award",
+    imageUrl: "/assets/certificates/IMG-20261007-WA0018.jpg"
   },
   {
     id: "cert-adv-lab-2026",
@@ -743,6 +743,18 @@ export const LEADERSHIP_INFO = [
     highlights: [
       "Completed intensive 3-day District Training Camp (10–12 Feb 2016)",
       "Trained in first aid basics, field craft, and community service ethics"
+    ]
+  },
+  {
+    role: "Life Member — BIDDS Society",
+    period: "2026 – Present",
+    institution: "Bioinformatics and Drug Discovery Society (BIDDS), Alagappa University",
+    icon: "Award",
+    description: "Official Life Member (BIDDS17-960) actively participating in academic and scientific advancement in computational drug discovery and bioinformatics.",
+    highlights: [
+      "Registered Life Member (Membership No: BIDDS17-960)",
+      "Affiliated with Department of Bioinformatics, Science Campus, Alagappa University",
+      "Engaged in academic networking and drug discovery research society initiatives"
     ]
   }
 ];

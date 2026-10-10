@@ -34,8 +34,8 @@ export const Leadership: React.FC<LeadershipProps> = ({ onOpenCertificateModal }
           </p>
         </div>
 
-        {/* 3 Leadership Pillars Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {/* Leadership Pillars Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {LEADERSHIP_INFO.map((item, idx) => (
             <motion.div
               key={item.role}
@@ -44,7 +44,7 @@ export const Leadership: React.FC<LeadershipProps> = ({ onOpenCertificateModal }
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: idx * 0.1 }}
               whileHover={{ y: -6, transition: { duration: 0.2 } }}
-              className="rounded-3xl p-6 sm:p-7 bg-[rgba(7,30,48,0.75)] backdrop-blur-md border border-[rgba(0,229,255,0.25)] shadow-md hover:border-[#00E5FF]/60 transition-all flex flex-col justify-between"
+              className="rounded-3xl p-6 bg-[rgba(7,30,48,0.75)] backdrop-blur-md border border-[rgba(0,229,255,0.25)] shadow-md hover:border-[#00E5FF]/60 transition-all flex flex-col justify-between"
             >
               <div>
                 {/* Top Badge & Icon */}
@@ -107,6 +107,15 @@ export const Leadership: React.FC<LeadershipProps> = ({ onOpenCertificateModal }
                     className="text-xs font-semibold text-[#00E5FF] hover:text-[#00B8D4] inline-flex items-center gap-1"
                   >
                     <span>View Pravesh Record</span>
+                    <ExternalLinkNodeIcon className="w-3.5 h-3.5" />
+                  </button>
+                )}
+                {item.role.includes('BIDDS') && (
+                  <button
+                    onClick={() => onOpenCertificateModal?.('cert-bidds-life-member')}
+                    className="text-xs font-semibold text-[#00E5FF] hover:text-[#00B8D4] inline-flex items-center gap-1"
+                  >
+                    <span>View Membership</span>
                     <ExternalLinkNodeIcon className="w-3.5 h-3.5" />
                   </button>
                 )}

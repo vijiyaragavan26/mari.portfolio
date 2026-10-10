@@ -459,6 +459,7 @@ export const TIMELINE: TimelineItem[] = [
     category: "Academics",
     statusBadge: "In Progress (2025–2027)",
     keyHighlights: [
+      "Life Member — Bioinformatics and Drug Discovery Society (BIDDS17-960)",
       "Completed Value Added Course in Medical Writing & Scientific Communication (2026)",
       "Cancer Therapy Workshop (Clinical Oncology & Future Therapeutics)",
       "3rd International Symposium on Advances in Laboratory Techniques",
@@ -490,12 +491,12 @@ export const CERTIFICATES: CertificateItem[] = [
     category: ["LEADERSHIP", "BIOMEDICAL"],
     year: "2026",
     dateStr: "2026",
-    description: "Life Membership certificate issued by the Bioinformatics and Drug Discovery Society (BIDDS), Department of Bioinformatics, Alagappa University.",
+    description: "Official Life Membership certificate (Membership no. BIDDS17-960) issued by the Bioinformatics and Drug Discovery Society (BIDDS), Department of Bioinformatics, Science Campus, Alagappa University.",
     verificationBadge: "BIDDS Life Member",
     documentType: "Membership Certificate",
     badgeColor: "bg-indigo-100 text-indigo-800 border-indigo-300",
     iconName: "Award",
-    imageUrl: "/assets/certificates/IMG-20261007-WA0018.jpg"
+    imageUrl: "/assets/certificates/bidds-life-member.png"
   },
   {
     id: "cert-adv-lab-2026",

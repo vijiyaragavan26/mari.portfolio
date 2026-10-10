@@ -16,7 +16,7 @@ export interface CertificateItem {
   dateStr?: string;
   description: string;
   verificationBadge?: string;
-  documentType: 'Fellowship Certificate' | 'Participation Certificate' | 'Value-Added Course Certificate' | 'Training Certificate' | 'Symposium Certificate' | 'NSS Special Camp';
+  documentType: 'Fellowship Certificate' | 'Participation Certificate' | 'Value-Added Course Certificate' | 'Training Certificate' | 'Symposium Certificate' | 'NSS Special Camp' | 'Membership Certificate';
   badgeColor?: string;
   iconName?: string;
   imageUrl?: string;

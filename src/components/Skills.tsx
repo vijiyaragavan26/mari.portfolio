@@ -7,9 +7,10 @@ import {
   BiotechnologyIcon, 
   BiomedicalScienceIcon
 } from './OriginalIcons';
-import { SKILL_CATEGORIES } from '../data/portfolioData';
+import { usePortfolio } from '../context/PortfolioContext';
 
 export const Skills: React.FC = () => {
+  const { skills } = usePortfolio();
   const getCategoryIcon = (iconName: string) => {
     switch (iconName) {
       case 'FlaskConical':
@@ -60,7 +61,7 @@ export const Skills: React.FC = () => {
 
         {/* 4 Categorized Skill Cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {SKILL_CATEGORIES.map((cat, idx) => {
+          {skills.map((cat, idx) => {
             const Icon = getCategoryIcon(cat.icon);
 
             return (

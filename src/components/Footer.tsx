@@ -168,7 +168,17 @@ export const Footer: React.FC = () => {
 
         {/* Bottom Copyright & Back to Top */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono text-[#A9C4D8]">
-          <p>© 2026 Mariyappan V. All rights reserved.</p>
+          <div className="flex items-center gap-3">
+            <p>© 2026 Mariyappan V. All rights reserved.</p>
+            <span className="text-[#A9C4D8]/30">•</span>
+            <a
+              href="#admin"
+              className="text-[#A9C4D8]/40 hover:text-[#00E5FF] transition-colors flex items-center gap-1 text-[11px]"
+              title="Admin Portal (Password Protected)"
+            >
+              <span>🔒 Admin</span>
+            </a>
+          </div>
 
           <button
             onClick={scrollToTop}

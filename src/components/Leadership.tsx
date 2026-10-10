@@ -6,13 +6,14 @@ import {
   ExternalLinkNodeIcon,
   LocationNodeIcon
 } from './OriginalIcons';
-import { LEADERSHIP_INFO } from '../data/portfolioData';
+import { usePortfolio } from '../context/PortfolioContext';
 
 interface LeadershipProps {
   onOpenCertificateModal?: (certId: string) => void;
 }
 
 export const Leadership: React.FC<LeadershipProps> = ({ onOpenCertificateModal }) => {
+  const { leadership } = usePortfolio();
   return (
     <section id="leadership" className="py-20 lg:py-28 bg-[#02101F] relative border-t border-[#00E5FF]/20 text-[#F4FAFF]">
       {/* Background Molecular Grid */}
@@ -36,7 +37,7 @@ export const Leadership: React.FC<LeadershipProps> = ({ onOpenCertificateModal }
 
         {/* Leadership Pillars Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {LEADERSHIP_INFO.map((item, idx) => (
+          {leadership.map((item, idx) => (
             <motion.div
               key={item.role}
               initial={{ opacity: 0, y: 20 }}

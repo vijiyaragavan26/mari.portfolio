@@ -101,3 +101,13 @@ export interface ResearchInterest {
   description: string;
   connectedFields: string[];
 }
+
+export interface LeadershipItem {
+  role: string;
+  period: string;
+  institution: string;
+  icon: string;
+  description: string;
+  highlights: string[];
+}
+

@@ -6,7 +6,7 @@ import {
   ExternalLinkNodeIcon,
   FilterNodeIcon
 } from './OriginalIcons';
-import { CERTIFICATES } from '../data/portfolioData';
+import { usePortfolio } from '../context/PortfolioContext';
 import { CertificateCategory } from '../types';
 
 const CATEGORIES: CertificateCategory[] = [
@@ -24,10 +24,11 @@ interface CertificateGalleryProps {
 }
 
 export const CertificateGallery: React.FC<CertificateGalleryProps> = ({ onSelectCertificate }) => {
+  const { certificates } = usePortfolio();
   const [selectedCategory, setSelectedCategory] = useState<CertificateCategory>('ALL');
   const [searchQuery, setSearchQuery] = useState('');
 
-  const filteredCertificates = CERTIFICATES.filter((cert) => {
+  const filteredCertificates = certificates.filter((cert) => {
     const matchesCategory = selectedCategory === 'ALL' || cert.category.includes(selectedCategory);
     const matchesQuery = searchQuery === '' || 
       cert.title.toLowerCase().includes(searchQuery.toLowerCase()) ||

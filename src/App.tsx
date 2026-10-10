@@ -20,20 +20,33 @@ import { AcademicCVModal } from './components/AcademicCVModal';
 import { CareerDirection } from './components/CareerDirection';
 import { Contact } from './components/Contact';
 import { Footer } from './components/Footer';
-import { CERTIFICATES } from './data/portfolioData';
+import { AdminModal } from './components/AdminModal';
+import { PortfolioProvider, usePortfolio } from './context/PortfolioContext';
 import { CertificateItem } from './types';
 
-export const App: React.FC = () => {
+const PortfolioAppContent: React.FC = () => {
+  const { certificates } = usePortfolio();
   const [selectedCertId, setSelectedCertId] = useState<string | null>(null);
   const [isCVOpen, setIsCVOpen] = useState<boolean>(false);
+  const [isAdminOpen, setIsAdminOpen] = useState<boolean>(false);
 
   useEffect(() => {
     // Dark futuristic biomedical laboratory theme
     document.documentElement.classList.add('dark');
+
+    const handleHash = () => {
+      if (window.location.hash === '#admin') {
+        setIsAdminOpen(true);
+      }
+    };
+
+    handleHash();
+    window.addEventListener('hashchange', handleHash);
+    return () => window.removeEventListener('hashchange', handleHash);
   }, []);
 
   const selectedCertificate: CertificateItem | null = selectedCertId
-    ? CERTIFICATES.find(c => c.id === selectedCertId) || null
+    ? certificates.find(c => c.id === selectedCertId) || null
     : null;
 
   const handleOpenCertificate = (certId: string) => {
@@ -42,6 +55,13 @@ export const App: React.FC = () => {
 
   const handleCloseCertificate = () => {
     setSelectedCertId(null);
+  };
+
+  const handleCloseAdmin = () => {
+    setIsAdminOpen(false);
+    if (window.location.hash === '#admin') {
+      window.history.pushState('', document.title, window.location.pathname + window.location.search);
+    }
   };
 
   return (
@@ -147,7 +167,21 @@ export const App: React.FC = () => {
         onClose={() => setIsCVOpen(false)}
       />
 
+      {/* Owner Admin CRUD Management Modal */}
+      <AdminModal
+        isOpen={isAdminOpen}
+        onClose={handleCloseAdmin}
+      />
+
     </div>
+  );
+};
+
+export const App: React.FC = () => {
+  return (
+    <PortfolioProvider>
+      <PortfolioAppContent />
+    </PortfolioProvider>
   );
 };
 

@@ -5,10 +5,11 @@ import {
   BiomedicalScienceIcon, 
   BiotechnologyIcon 
 } from './OriginalIcons';
-import { TIMELINE } from '../data/portfolioData';
+import { usePortfolio } from '../context/PortfolioContext';
 
 export const AcademicTimeline: React.FC = () => {
-  const [expandedIndex, setExpandedIndex] = useState<number | null>(3);
+  const { timeline } = usePortfolio();
+  const [expandedIndex, setExpandedIndex] = useState<number | null>(timeline.length - 1);
 
   const getInstitutionLogo = (inst: string) => {
     if (inst.toLowerCase().includes('alagappa')) return '/assets/logos/alagappa_university_logo.png';
@@ -50,7 +51,7 @@ export const AcademicTimeline: React.FC = () => {
           <div className="absolute top-4 bottom-4 left-6 w-0.5 bg-gradient-to-b from-[#00E5FF] to-[#00B8D4] opacity-30 sm:hidden" />
 
           <div className="space-y-8 sm:space-y-12">
-            {TIMELINE.map((item, idx) => {
+            {timeline.map((item, idx) => {
               const isExpanded = expandedIndex === idx;
               const isEven = idx % 2 === 0;
               const logoUrl = getInstitutionLogo(item.institution);

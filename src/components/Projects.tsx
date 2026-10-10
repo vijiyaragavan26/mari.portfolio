@@ -7,10 +7,11 @@ import {
   BiotechnologyIcon,
   CheckCircleNodeIcon
 } from './OriginalIcons';
-import { PROJECTS } from '../data/portfolioData';
+import { usePortfolio } from '../context/PortfolioContext';
 
 export const Projects: React.FC = () => {
-  const [activeProject, setActiveProject] = useState<string>(PROJECTS[0].id);
+  const { projects } = usePortfolio();
+  const [activeProject, setActiveProject] = useState<string>(projects[0]?.id || '');
 
   const getProjectIcon = (area: string) => {
     switch (area) {
@@ -48,7 +49,7 @@ export const Projects: React.FC = () => {
 
         {/* 3 Project Cards Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
-          {PROJECTS.map((proj, idx) => {
+          {projects.map((proj, idx) => {
             const Icon = getProjectIcon(proj.area);
             const isSelected = activeProject === proj.id;
 

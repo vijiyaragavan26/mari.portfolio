@@ -413,7 +413,7 @@ export const AdminModal: React.FC<AdminModalProps> = ({ isOpen, onClose }) => {
                   type="password"
                   value={passwordInput}
                   onChange={(e) => setPasswordInput(e.target.value)}
-                  placeholder="Enter admin password (default: mari@2026)"
+                  placeholder="Enter admin password "
                   className="w-full px-4 py-3 rounded-xl bg-[#02101F] border border-[#00E5FF]/40 text-sm text-[#F4FAFF] focus:outline-none focus:ring-2 focus:ring-[#00E5FF] placeholder-[#A9C4D8]/50"
                   autoFocus
                 />

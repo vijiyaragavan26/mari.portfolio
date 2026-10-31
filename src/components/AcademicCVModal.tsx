@@ -12,9 +12,14 @@ import {
   FlaskConical, 
   FileText, 
   Building2, 
-  CheckCircle2,
-  Linkedin
+  CheckCircle2
 } from 'lucide-react';
+
+const LinkedinIcon: React.FC<{ className?: string }> = ({ className }) => (
+  <svg className={className} fill="currentColor" viewBox="0 0 24 24">
+    <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/>
+  </svg>
+);
 import { PERSONAL_INFO, PROJECTS, PRESENTATIONS, CONFERENCES, WORKSHOPS, SKILL_CATEGORIES, LEADERSHIP_INFO, TIMELINE } from '../data/portfolioData';
 
 interface AcademicCVModalProps {
@@ -134,24 +139,23 @@ export const AcademicCVModal: React.FC<AcademicCVModalProps> = ({ isOpen, onClos
                 </div>
               )}
 
-              <a
-                href={PERSONAL_INFO.resumeUrl}
-                download="Mariyappan_V_Resume.pdf"
-                className="px-3.5 py-2 rounded-xl bg-[#00E5FF] hover:bg-[#00B8D4] text-[#031525] text-xs font-bold flex items-center gap-1.5 transition-colors shadow-[0_0_12px_rgba(0,229,255,0.25)]"
-                title="Download Official PDF Resume"
-              >
-                <Download className="w-4 h-4 text-[#031525]" />
-                <span className="hidden md:inline">Download Original PDF</span>
-                <span className="md:hidden">PDF</span>
-              </a>
-
-              <button
-                onClick={handlePrint}
-                className="px-3 py-2 rounded-xl bg-[#071E30] text-[#00E5FF] border border-[#00E5FF]/30 hover:bg-[#02101F] text-xs font-semibold hidden sm:flex items-center gap-1.5 transition-colors"
-              >
-                <Printer className="w-4 h-4" />
-                <span>Print</span>
-              </button>
+              {typeof window !== 'undefined' && sessionStorage.getItem('mariyappan_admin_auth') === 'true' ? (
+                <a
+                  href={PERSONAL_INFO.resumeUrl}
+                  download="Mariyappan_V_Resume.pdf"
+                  className="px-3.5 py-2 rounded-xl bg-[#00E5FF] hover:bg-[#00B8D4] text-[#031525] text-xs font-bold flex items-center gap-1.5 transition-colors shadow-[0_0_12px_rgba(0,229,255,0.25)]"
+                  title="Admin Download PDF Resume"
+                >
+                  <Download className="w-4 h-4 text-[#031525]" />
+                  <span className="hidden md:inline">Admin Download</span>
+                  <span className="md:hidden">PDF</span>
+                </a>
+              ) : (
+                <div className="px-3 py-1.5 rounded-xl bg-[#071E30] border border-[#00E5FF]/30 text-[#00E5FF] text-xs font-mono font-semibold flex items-center gap-1.5 select-none pointer-events-none">
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#00E5FF] animate-pulse" />
+                  <span>Read &amp; View Only</span>
+                </div>
+              )}
 
               <button
                 onClick={onClose}
@@ -173,29 +177,45 @@ export const AcademicCVModal: React.FC<AcademicCVModalProps> = ({ isOpen, onClos
                   className="space-y-8 max-w-3xl w-full transition-transform duration-200"
                 >
                   {/* Page 1 */}
-                  <div className="bg-white rounded-2xl overflow-hidden shadow-xl border border-slate-300">
+                  <div className="bg-white rounded-2xl overflow-hidden shadow-xl border border-slate-300 relative select-none">
                     <div className="p-2.5 bg-slate-50 border-b border-slate-200 flex items-center justify-between text-xs font-mono text-slate-500">
                       <span>PAGE 1 OF 2</span>
                       <span>Mariyappan V — Academic Resume</span>
                     </div>
-                    <img 
-                      src="/assets/resume/mariyappan_resume_p1.png" 
-                      alt="Mariyappan V Resume - Page 1" 
-                      className="w-full h-auto"
-                    />
+                    <div className="relative">
+                      <div 
+                        className="absolute inset-0 z-10 select-none" 
+                        onContextMenu={(e) => e.preventDefault()} 
+                      />
+                      <img 
+                        src="/assets/resume/mariyappan_resume_p1.png" 
+                        alt="Mariyappan V Resume - Page 1" 
+                        className="w-full h-auto select-none pointer-events-none"
+                        draggable={false}
+                        onContextMenu={(e) => e.preventDefault()}
+                      />
+                    </div>
                   </div>
 
                   {/* Page 2 */}
-                  <div className="bg-white rounded-2xl overflow-hidden shadow-xl border border-slate-300">
+                  <div className="bg-white rounded-2xl overflow-hidden shadow-xl border border-slate-300 relative select-none">
                     <div className="p-2.5 bg-slate-50 border-b border-slate-200 flex items-center justify-between text-xs font-mono text-slate-500">
                       <span>PAGE 2 OF 2</span>
                       <span>Mariyappan V — Academic Resume</span>
                     </div>
-                    <img 
-                      src="/assets/resume/mariyappan_resume_p2.png" 
-                      alt="Mariyappan V Resume - Page 2" 
-                      className="w-full h-auto"
-                    />
+                    <div className="relative">
+                      <div 
+                        className="absolute inset-0 z-10 select-none" 
+                        onContextMenu={(e) => e.preventDefault()} 
+                      />
+                      <img 
+                        src="/assets/resume/mariyappan_resume_p2.png" 
+                        alt="Mariyappan V Resume - Page 2" 
+                        className="w-full h-auto select-none pointer-events-none"
+                        draggable={false}
+                        onContextMenu={(e) => e.preventDefault()}
+                      />
+                    </div>
                   </div>
                 </div>
               </div>
@@ -230,7 +250,7 @@ export const AcademicCVModal: React.FC<AcademicCVModalProps> = ({ isOpen, onClos
                     {PERSONAL_INFO.location}
                   </span>
                   <span className="flex items-center gap-1">
-                    <Linkedin className="w-3.5 h-3.5 text-[#0077b5]" />
+                    <LinkedinIcon className="w-3.5 h-3.5 text-[#0077b5]" />
                     LinkedIn: in/mariyappan-v
                   </span>
                 </div>

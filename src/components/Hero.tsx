@@ -99,10 +99,10 @@ export const Hero: React.FC<HeroProps> = ({ onOpenCV }) => {
               <button
                 onClick={onOpenCV}
                 className="inline-flex items-center gap-2 px-4 py-3 rounded-xl font-medium text-sm text-[#F4FAFF] hover:text-[#00E5FF] hover:bg-[#071E30] transition-all border border-[#00E5FF]/30"
-                title="View Verified Academic CV / Original Resume"
+                title="View Verified Academic CV (Read & View Mode)"
               >
                 <ScientificDocumentDnaIcon className="w-4 h-4 text-[#00E5FF]" />
-                <span>Download CV</span>
+                <span>View Academic CV</span>
               </button>
 
               <a

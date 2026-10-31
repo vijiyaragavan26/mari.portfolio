@@ -128,17 +128,24 @@ export const CertificateModal: React.FC<CertificateModalProps> = ({ certificate,
               )}
 
               {certificate.pdfUrl && (
-                <a
-                  href={certificate.pdfUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  download
-                  className="p-2 rounded-xl text-[#031525] bg-[#00E5FF] hover:bg-[#00B8D4] transition-colors inline-flex items-center gap-1.5 text-xs font-bold shadow-[0_0_10px_rgba(0,229,255,0.25)]"
-                  title="Download Original PDF"
-                >
-                  <ScientificDocumentDnaIcon className="w-4 h-4" color="#031525" />
-                  <span className="hidden md:inline">PDF</span>
-                </a>
+                typeof window !== 'undefined' && sessionStorage.getItem('mariyappan_admin_auth') === 'true' ? (
+                  <a
+                    href={certificate.pdfUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    download
+                    className="p-2 rounded-xl text-[#031525] bg-[#00E5FF] hover:bg-[#00B8D4] transition-colors inline-flex items-center gap-1.5 text-xs font-bold shadow-[0_0_10px_rgba(0,229,255,0.25)]"
+                    title="Admin Download Original PDF"
+                  >
+                    <ScientificDocumentDnaIcon className="w-4 h-4" color="#031525" />
+                    <span className="hidden md:inline">Admin PDF</span>
+                  </a>
+                ) : (
+                  <div className="px-3 py-1.5 rounded-xl bg-[#071E30] border border-[#00E5FF]/30 text-[#00E5FF] text-xs font-mono font-semibold flex items-center gap-1.5 select-none pointer-events-none">
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#00E5FF] animate-pulse" />
+                    <span>View Only</span>
+                  </div>
+                )
               )}
 
               <button
@@ -159,12 +166,19 @@ export const CertificateModal: React.FC<CertificateModalProps> = ({ certificate,
               <div className="w-full flex flex-col items-center justify-center overflow-auto max-h-[70vh] py-2">
                 <div 
                   style={{ transform: `scale(${zoomLevel})`, transformOrigin: 'center top' }}
-                  className="transition-transform duration-200 rounded-2xl overflow-hidden shadow-2xl border border-[#00E5FF]/30 bg-[#071E30] max-w-3xl"
+                  className="transition-transform duration-200 rounded-2xl overflow-hidden shadow-2xl border border-[#00E5FF]/30 bg-[#071E30] max-w-3xl relative select-none"
                 >
+                  {/* Transparent Anti-Save / Anti-Inspect Guard Shield */}
+                  <div 
+                    className="absolute inset-0 z-10 select-none" 
+                    onContextMenu={(e) => e.preventDefault()} 
+                  />
                   <img 
                     src={certificate.imageUrl} 
                     alt={certificate.title}
-                    className="w-full h-auto object-contain max-h-[65vh]"
+                    className="w-full h-auto object-contain max-h-[65vh] select-none pointer-events-none"
+                    draggable={false}
+                    onContextMenu={(e) => e.preventDefault()}
                   />
                 </div>
               </div>

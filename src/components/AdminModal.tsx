@@ -115,7 +115,11 @@ export const AdminModal: React.FC<AdminModalProps> = ({ isOpen, onClose }) => {
   const [importStatus, setImportStatus] = useState('');
 
   const getAdminPassword = () => {
-    return localStorage.getItem('mariyappan_admin_pass') || 'mari@2026';
+    return (
+      ((import.meta as unknown as { env?: Record<string, string> }).env?.VITE_ADMIN_PASSWORD) ||
+      localStorage.getItem('mariyappan_admin_pass') ||
+      'mari@2026'
+    );
   };
 
   const handleLogin = (e: React.FormEvent) => {

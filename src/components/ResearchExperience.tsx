@@ -196,7 +196,7 @@ export const ResearchExperience: React.FC<ResearchExperienceProps> = ({ onOpenCe
                     className="w-full py-2.5 px-4 rounded-xl bg-[#00E5FF] hover:bg-[#00B8D4] text-[#031525] font-bold text-xs transition-colors flex items-center justify-center gap-2 shadow-[0_0_15px_rgba(0,229,255,0.25)]"
                     data-cursor="Inspect"
                   >
-                    <span>View & Download Certificate</span>
+                    <span>View Verified Certificate</span>
                   </button>
                 </div>
 

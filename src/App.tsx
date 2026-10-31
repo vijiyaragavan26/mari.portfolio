@@ -21,6 +21,7 @@ import { CareerDirection } from './components/CareerDirection';
 import { Contact } from './components/Contact';
 import { Footer } from './components/Footer';
 import { AdminModal } from './components/AdminModal';
+import { ContentProtection } from './components/ContentProtection';
 import { PortfolioProvider, usePortfolio } from './context/PortfolioContext';
 import { CertificateItem } from './types';
 
@@ -172,6 +173,9 @@ const PortfolioAppContent: React.FC = () => {
         isOpen={isAdminOpen}
         onClose={handleCloseAdmin}
       />
+
+      {/* Global Read-Only & Anti-Screenshot Content Protection */}
+      <ContentProtection />
 
     </div>
   );
